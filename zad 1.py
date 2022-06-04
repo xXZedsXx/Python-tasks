@@ -4,7 +4,12 @@ selected_number = random.randint(1,51)
 print("Zgadnij liczbę")
 counter=0
 while True:
-    input_number = int(input('Podaj liczbę\n'))
+    try:
+        input_number = int(input('Podaj liczbę\n'))
+    except:
+        print('Liczba jest zła')
+        continue
+
     if input_number == -1:
         break
     counter = +1
@@ -17,3 +22,4 @@ while True:
     if input_number < selected_number:
         print('Podana liczba jest za mała niż szukana')
         continue
+print("Koniec programu")
